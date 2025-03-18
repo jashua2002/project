@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <form action="/add/products" method="post">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">1</td>
+                <td th:text="${product.name}">Sample Name</td>
+                <td th:text="${product.description}">Sample Description</td>
+                <td th:text="${product.price}">100.00</td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+</body>
+</html>
